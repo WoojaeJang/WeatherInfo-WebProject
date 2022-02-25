@@ -2,13 +2,17 @@
 const citySelect = document.querySelector('.city-select');
 
 // 배경 및 이미지 관련 태그 불러오기
-const html = document.querySelector('#bg1');
 const descriptionIcon = document.querySelector('#bg2');
 
 citySelect.addEventListener('change', () => {
 
     const selectedIndex = citySelect.selectedIndex;
     let selectedCity = citySelect.options[selectedIndex].value;
+
+    if (selectedCity === 'unselected') {
+        location.reload();
+    }
+
     const frontURI = "http://api.openweathermap.org/data/2.5/weather?q=";
     const backURI = "&appid=";
     let appid = "4db58425e72adb13e8a66add8c65143e"; // dotenv
@@ -23,7 +27,7 @@ citySelect.addEventListener('change', () => {
         xhr.onreadystatechange = () => {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 callback(xhr.response)
-            }
+            } 
         }
         xhr.send();
     };
@@ -85,39 +89,99 @@ citySelect.addEventListener('change', () => {
 
         // 배경 변경
         function changeBackGroundPicture(data) {
+            let divBgTag = document.getElementById("div-bg")
+            divBgTag.setAttribute('class', 'full-bg')
+            divBgTag.setAttribute('style', 'left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 100%; width: 100%; z-index: -999999; position: fixed;')
+            
+            let divBgItemTag = document.getElementById("div-bg-item")
+            divBgItemTag.setAttribute('class', 'full-bg-item')
+            divBgItemTag.setAttribute('style', 'position: absolute; margin: 0px; padding: 0px; border: none; width: 100%; height: 100%; z-index: -999999;')
+            
+            let imgTag = document.getElementById("bgImg")
+            let imageName = '맑음'
+
             let weather = data.weather[0]['main']; // JSON 파일에서 해당 도시의 weather 받아오기
-            // console.log(weather);
-            html.classList.remove(...html.classList);   
-            descriptionIcon.classList.remove(...descriptionIcon.classList); 
 
             if (weather === 'Clouds') {
-                descriptionIcon.classList.add('fas', 'fa-cloud-sun', 'fa-5x');  // 날씨의 이미지
-                html.classList.add('weather-clouds');   // 배경이미지의 CSS파일
+                descriptionIcon.classList.add('fas', 'fa-cloud-sun', 'fa-5x');
+                imageName = '구름';
             } else if (weather === 'Clear') {
                 descriptionIcon.classList.add('fas', 'fa-sun', 'fa-5x');
-                html.classList.add('weather-clear');
+                imageName = '맑음';
             } else if (weather === 'Mist') {
                 descriptionIcon.classList.add('fas', 'fa-bolt', 'fa-5x');
-                html.classList.add('weather-mist');
+                imageName = '안개';
             } else if (weather === 'Rain') {
                 descriptionIcon.classList.add('fas', 'fa-umbrella', 'fa-5x');
-                html.classList.add('weather-rain');
+                imageName = '비';
             } else if (weather === 'Snow') {
                 descriptionIcon.classList.add('fas', 'fa-snowflake', 'fa-5x');
-                html.classList.add('weather-snow');
+                imageName = '눈';
             } else if (weather === 'Atmosphere') {
                 descriptionIcon.classList.add('fas', 'fa-smog', 'fa-5x');
-                html.classList.add('weather-clouds');
+                imageName = '구름';
             } else {
                 descriptionIcon.classList.add('fas', 'fa-cloud', 'fa-5x');
-                html.classList.add('weather-default');
+                imageName = '맑음';
             }
+
+            let imageUrl = './../img/' + imageName + '.jpg';
+            imgTag.setAttribute('alt', '')
+            imgTag.setAttribute('src', imageUrl);
+            divBgItemTag.appendChild(imgTag);    
+            
+            
         }
 
         // 함수 실행
         changeBackGroundPicture(data);  
+        
+        
+        const getRatio = function (callback) {
+            const wr = window.innerWidth/window.innerHeight;
+            let img = new Image();
+            img.src = document.getElementById("bgImg").getAttribute('src');
+            const ir = img.width/img.height;
+    
+            const myRatio = wr/ir;
+            
+            callback(myRatio)
+        };
+    
+        getRatio( (data) => {
+            let imgTag = document.getElementById("bgImg")
+            if (data > 1) {
+                console.log('크');
+                imgTag.setAttribute('class', 'bg-img-big');
+            } else {
+                console.log('작');
+                imgTag.setAttribute('class', 'bg-img-small');
+            }
+        });
+
 
     });
+
+
+});
+
+window.addEventListener('resize', () => {
+    
+    let wr = window.innerWidth/window.innerHeight;
+    
+    let img = new Image();
+    img.src = document.getElementById("bgImg").getAttribute('src');
+    let ir = img.width/img.height;
+
+    let imgTag = document.getElementById("bgImg")
+
+    if (wr > ir) {
+        imgTag.className = 'bg-img-big';
+    } else {
+        imgTag.className = 'bg-img-small';
+    }
+
+
 });
 
 
