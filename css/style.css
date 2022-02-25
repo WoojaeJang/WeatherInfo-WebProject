@@ -262,7 +262,8 @@ textarea {
 
     .footer-sns {
         margin-left: 0;
-        margin-top: 50px;
+        margin-top: 0;
+        padding: 0;
     }
 
     .tm-content {
@@ -271,14 +272,18 @@ textarea {
     }
 
     .tm-col-right {
-        padding-top: 40px;
+        padding-top: 0;
         padding-left: 30px;
     }
 
     .tm-col-footer {
         padding-left: 10px;
         padding-right: 10px;
-    }    
+    }
+
+    .footer-menu {
+        padding-top: 10px;
+    }
 
 }
 
@@ -344,7 +349,10 @@ textarea {
   }
 
 
-
+.bg-img {
+    position: absolute;
+    background-size : cover;
+}
 
 .bg-img-big {
     position: absolute;
@@ -360,14 +368,29 @@ textarea {
     min-width: 100%;
 }
 
-
-
 .bg-trans {
     position: absolute;
+    background-size : cover;
+}
+
+.bg-trans-big {
     background-color: black;
-    z-index: -51;
-    width: 100%;
-    height: 100%;
-    top: 0;
     opacity: 15%;
+    z-index: 5;
+
+    position: absolute;
+    background-size : cover;
+    width: 100%;
+    min-height: 100%;
+}
+
+.bg-trans-small {
+    background-color: black;
+    opacity: 15%;
+    z-index: 5;
+
+    position: absolute;
+    background-size : cover;
+    height: 100vh;
+    min-width: 100%;
 }

@@ -138,6 +138,7 @@ citySelect.addEventListener('change', () => {
         
         
         const getRatio = function (callback) {
+            
             const wr = window.innerWidth/window.innerHeight;
             let img = new Image();
             img.src = document.getElementById("bgImg").getAttribute('src');
@@ -150,12 +151,13 @@ citySelect.addEventListener('change', () => {
     
         getRatio( (data) => {
             let imgTag = document.getElementById("bgImg")
+            let bgTrans = document.getElementById("bgTrans");
             if (data > 1) {
-                console.log('크');
                 imgTag.setAttribute('class', 'bg-img-big');
+                bgTrans.setAttribute('class', 'bg-trans-big');
             } else {
-                console.log('작');
                 imgTag.setAttribute('class', 'bg-img-small');
+                bgTrans.setAttribute('class', 'bg-trans-small');
             }
         });
 
@@ -167,20 +169,32 @@ citySelect.addEventListener('change', () => {
 
 window.addEventListener('resize', () => {
     
-    let wr = window.innerWidth/window.innerHeight;
-    
-    let img = new Image();
-    img.src = document.getElementById("bgImg").getAttribute('src');
-    let ir = img.width/img.height;
+    const resizeWeb = function() {
+        const selectedIndex = citySelect.selectedIndex;
+        let selectedCity = citySelect.options[selectedIndex].value;
 
-    let imgTag = document.getElementById("bgImg")
+        if (selectedCity != 'unselected'){
+            
+            let wr = window.innerWidth/window.innerHeight;
+            
+            let img = new Image();
+            img.src = document.getElementById("bgImg").getAttribute('src');
+            let ir = img.width/img.height;
+        
+            let imgTag = document.getElementById("bgImg");
+            let bgTrans = document.getElementById("bgTrans");
+        
+            if (wr > ir) {
+                imgTag.className = 'bg-img-big';
+                bgTrans.className = 'bg-trans-big';
+            } else {
+                imgTag.className = 'bg-img-small';
+                bgTrans.className = 'bg-trans-small';
+            }
+        }
+    };
 
-    if (wr > ir) {
-        imgTag.className = 'bg-img-big';
-    } else {
-        imgTag.className = 'bg-img-small';
-    }
-
+    resizeWeb();
 
 });
 
@@ -188,7 +202,7 @@ window.addEventListener('resize', () => {
 // 시간
 var TargetDay = document.getElementById("currentDayValue");
 var TargetTime = document.getElementById("currentTimeValue");
-// console.log(Target);
+
 function clock() {
     var time = new Date();
 
