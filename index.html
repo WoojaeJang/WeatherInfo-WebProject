@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Diagoona HTML CSS Template</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="./css/style.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script defer src="./js/weather.js"></script>
+
+</head>
+
+<body>
+    <div class="tm-container">        
+        <div>
+            <div class="tm-row pt-4">
+                <div class="tm-col-left">
+                    <div class="tm-site-header media">
+                        <i class="fas fa-umbrella-beach fa-3x mt-1 tm-logo"></i>
+                        <div class="media_body">
+                            <h1 class="tm-sitename text-uppercase">일기예보</h1>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <br><br>
+                            <div class="currentTime" id="t1">
+                                <p class="times" id="currentDayValue"></p>
+                                <p class="times" id="currentTimeValue"></p>
+                            </div>
+
+                            <br>
+
+                            <div class="currentTemp" id="w1">
+                                <p>현재기온 :  </p>
+                                <p class="currentTempValue" id="w1v"></p>
+                            </div>
+                            <div class="weatherImg" id="w2">
+                                <i class="weatherImgValue" id="bg2"></i>                                
+                            </div>
+
+                        </div>        
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="tm-row">
+                <div class="tm-col-left"></div>
+                <main class="tm-col-right">
+                    <section class="tm-content">
+                        
+                        <h2 class="mb-5 tm-content-title">도시 선택</h2>
+                        
+                        <div class="form-group">
+                            <!-- <label for="city-name">City Name:</label> -->
+                            <select id= "city-select" class="city-select"
+                            style="width: auto" aria-label="Default select example" required>
+                                <option value="unselected" style="color: black">도시</option>            
+                                <option value="Seoul" style="color: black">서울</option>            
+                                <option value="Incheon" style="color: black">인천</option>
+                                <option value="New, Us" style="color: black">뉴욕</option>
+                                <option value="Tokyo" style="color: black">도쿄</option>
+                                <option value="Beijing" style="color: black">베이징</option>
+                                <option value="London, GB" style="color: black">런던</option>
+                                <option value="Manila, PH" style="color: black">마닐라</option>
+                                <option value="Hong Kong, HK" style="color: black">홍콩</option>
+                                <option value="Rome" style="color: black">로마</option>
+                                <option value="Paris, FR" style="color: black">파리</option>
+                                <option value="Barcelona, ES" style="color: black">바르셀로나</option>
+                            </select>
+                        </div>
+
+                        <hr class="mb-5">
+
+                        <!-- 가시거리, 경도+위도, 나라, 날씨 정보, 체감온도?? -->
+                        <div class="resultWeather">
+                            <div class="maxMinTemp" id="w2">
+                                <p>순간 최고기온 / 최저기온 :  </p>
+                                <p class="maxMinTempValue" id="w2v"></p>
+                            </div>
+                            <div class="humidity" id="w2">
+                                <p>습도 :  </p>            
+                                <p class="humidityValue" id="w2v"></p>            
+                            </div>
+                            <div class="wind" id="w2">
+                                <p>풍향 및 풍량:  </p>
+                                <p class="windValue" id="w2v"></p>
+                            </div>
+                            <div class="clouds" id="w2">
+                                <p>구름:  </p>
+                                <p class="cloudsValue" id="w2v"></p>
+                            </div>
+                            <div class="weatherDescription" id="w2">
+                                <p>날씨 설명:  </p>
+                                <p class="weatherDescriptionValue" id="w2v"></p>
+                            </div>
+                            <div class="lonLat" id="w2">
+                                <p>경도 / 위도 :  </p>
+                                <p class="lonLatValue" id="w2v"></p>
+                            </div>
+                            <div class="feelsLikeTemp" id="w2">
+                                <p>체감 온도 :  </p>
+                                <p class="feelsLikeTempValue" id="w2v"></p>
+                            </div>
+                            <div class="visibility" id="w2">
+                                <p>가시 거리 :  </p>
+                                <p class="visibilityValue" id="w2v"></p>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>        
+
+        <div class="tm-row">
+
+            <div class="tm-col-right tm-col-footer">
+                <footer class="tm-site-footer text-right">
+                    
+                    <ul class="Footer__sns">
+                        <li><a href="#"><i class="fab fa-facebook fa-lg" style="color: white;"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram fa-lg" style="color: white;"></i></a></li>
+                        <li><a href="#"><i class="fab fa-discord fa-lg" style="color: white;"></i></a></li>
+                    </ul>
+
+                    <ul class="Footer__menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>    
+
+                </footer>
+            </div>  
+        </div>
+
+        <!-- Diagonal background design -->
+        <div class="tm-bg">
+            <div class="tm-bg-left"></div>
+            <div class="tm-bg-right"></div>
+        </div>
+    </div>
+    <div id="bg1"></div>
+    
+    <!-- <div id="bg2"></div> -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+</body>
+</html>
