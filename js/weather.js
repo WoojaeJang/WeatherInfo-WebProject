@@ -1,15 +1,14 @@
+// select 태그 불러오기
 const citySelect = document.querySelector('.city-select');
 
-// 배경 및 이미지 설정
+// 배경 및 이미지 관련 태그 불러오기
 const html = document.querySelector('#bg1');
 const descriptionIcon = document.querySelector('#bg2');
-
-let selectedCity = 'Seoul'
 
 citySelect.addEventListener('change', () => {
 
     const selectedIndex = citySelect.selectedIndex;
-    selectedCity = citySelect.options[selectedIndex].value;
+    let selectedCity = citySelect.options[selectedIndex].value;
     const frontURI = "http://api.openweathermap.org/data/2.5/weather?q=";
     const backURI = "&appid=";
     let appid = "4db58425e72adb13e8a66add8c65143e"; // dotenv
@@ -63,61 +62,60 @@ citySelect.addEventListener('change', () => {
         } else {
             windDegree1 = "북풍"
         }
-        // 배경 변경
-        function changeBackGroundPicture(data) {
-            let weather = data.weather[0]['main']; //JSON 파일에서 해당 도시의 weather 받아오기
-            // console.log(weather);
-            html.classList.remove(...html.classList);   //
-            descriptionIcon.classList.remove(...descriptionIcon.classList); //
-
-            if (weather === 'Clouds') {
-                html.classList.add('weather-clouds');   //배경이미지의 CSS파일
-                descriptionIcon.classList.add('fas', 'fa-cloud-sun', 'fa-5x');  //날씨의 이미지
-            } else if (weather === 'Clear') {
-                html.classList.add('weather-clear');
-                descriptionIcon.classList.add('fas', 'fa-sun', 'fa-5x');
-            } else if (weather === 'Mist') {
-                html.classList.add('weather-mist');
-                descriptionIcon.classList.add('fas', 'fa-bolt', 'fa-5x');
-            } else if (weather === 'Rain') {
-                html.classList.add('weather-rain');
-                descriptionIcon.classList.add('fas', 'fa-umbrella', 'fa-5x');
-            } else if (weather === 'Snow') {
-                html.classList.add('weather-snow');
-                descriptionIcon.classList.add('fas', 'fa-snowflake', 'fa-5x');
-            } else if (weather === 'Atmosphere') {
-                html.classList.add('weather-clouds');
-                descriptionIcon.classList.add('fas', 'fa-smog', 'fa-5x');
-            } else {
-                html.classList.add('weather-default');
-                descriptionIcon.classList.add('fas', 'fa-cloud', 'fa-5x');
-            }
-        }
-        changeBackGroundPicture(data);  //함수 실행
 
         const currentTempValue = document.querySelector('.currentTempValue');
-        const maxMinTempValue = document.querySelector('.maxMinTempValue'); //하루의 최고 기온, 최저 기온이 X
+        const maxMinTempValue = document.querySelector('.maxMinTempValue'); // 하루의 최고 기온, 최저 기온이 X
         const humidityValue = document.querySelector('.humidityValue');
         const windValue = document.querySelector('.windValue');
         const cloudsValue = document.querySelector('.cloudsValue');
-        const visibilityValue = document.querySelector('.visibilityValue'); //가시거리 
+        const visibilityValue = document.querySelector('.visibilityValue'); // 가시거리 
         const lonLatValue = document.querySelector('.lonLatValue');
         const feelsLikeTempValue = document.querySelector('.feelsLikeTempValue');
         const weatherDescriptionValue = document.querySelector('.weatherDescriptionValue');
 
-
-
-
         currentTempValue.textContent = currentTemp + "℃";
-
         maxMinTempValue.textContent = maxTemp + "℃   /   " + minTemp + "℃";
         humidityValue.textContent = currentHum + "%";
         windValue.textContent = windDegree1 + "   /   " + windSpeed + "m/s";
         cloudsValue.textContent = clouds;
         lonLatValue.textContent = longitude + "°   /   " + latitude + "°";
         feelsLikeTempValue.textContent = feelsLikeTemp + "℃";
-        weatherDescriptionValue.textContent = weatherDescription; //영어로 출력, 한글로 
-        visibilityValue.textContent = visibility / 1000 + "km"; //최대치가 10km, 더 높은 경우 모두 10km로 처리
+        weatherDescriptionValue.textContent = weatherDescription; // 영어로 출력, 한글로 
+        visibilityValue.textContent = visibility / 1000 + "km"; // 최대치가 10km, 더 높은 경우 모두 10km로 처리
+
+        // 배경 변경
+        function changeBackGroundPicture(data) {
+            let weather = data.weather[0]['main']; // JSON 파일에서 해당 도시의 weather 받아오기
+            // console.log(weather);
+            html.classList.remove(...html.classList);   
+            descriptionIcon.classList.remove(...descriptionIcon.classList); 
+
+            if (weather === 'Clouds') {
+                descriptionIcon.classList.add('fas', 'fa-cloud-sun', 'fa-5x');  // 날씨의 이미지
+                html.classList.add('weather-clouds');   // 배경이미지의 CSS파일
+            } else if (weather === 'Clear') {
+                descriptionIcon.classList.add('fas', 'fa-sun', 'fa-5x');
+                html.classList.add('weather-clear');
+            } else if (weather === 'Mist') {
+                descriptionIcon.classList.add('fas', 'fa-bolt', 'fa-5x');
+                html.classList.add('weather-mist');
+            } else if (weather === 'Rain') {
+                descriptionIcon.classList.add('fas', 'fa-umbrella', 'fa-5x');
+                html.classList.add('weather-rain');
+            } else if (weather === 'Snow') {
+                descriptionIcon.classList.add('fas', 'fa-snowflake', 'fa-5x');
+                html.classList.add('weather-snow');
+            } else if (weather === 'Atmosphere') {
+                descriptionIcon.classList.add('fas', 'fa-smog', 'fa-5x');
+                html.classList.add('weather-clouds');
+            } else {
+                descriptionIcon.classList.add('fas', 'fa-cloud', 'fa-5x');
+                html.classList.add('weather-default');
+            }
+        }
+
+        // 함수 실행
+        changeBackGroundPicture(data);  
 
     });
 });
