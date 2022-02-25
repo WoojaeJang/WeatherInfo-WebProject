@@ -15,10 +15,10 @@ last_modified_at: 2022-02-24
 # Javascript 미니 프로젝트 (오늘의 날씨)
   
 * 팀원 구성 :  
-  - 이승현  
-  - 이정훈  
-  - 장우재  
-  - 윤지원  
+  - [이승현](https://github.com/IlearnML)
+  - [이정훈](https://github.com/nnn991)
+  - [장우재](https://github.com/WoojaeJang)
+  - [윤지원]()
   
 * 프로젝트 소개 : 도시별 오늘의 날씨를 확인하는 일기예보  
   
@@ -38,30 +38,30 @@ last_modified_at: 2022-02-24
 
   1. 방향성 확인 :  
     
-  ![introduction](https://user-images.githubusercontent.com/59858894/155516028-dc4bfec6-32ec-4b72-9171-09c65abd8594.png)  
+  ![introduction](./img_readme/01_direction.PNG)  
 
   2. 브라우저 화면 구성 :  
     
-  ![introduction2](https://user-images.githubusercontent.com/59858894/155517624-7774a233-ae18-4508-9d5a-36e0c97d952e.PNG)  
+  ![introduction2](./img_readme/02_layout.PNG)  
 
   3. 배경 및 브라우저 꾸미기 :  
     
-  ![introduction3](https://user-images.githubusercontent.com/59858894/155517885-065c9e49-4a27-4bff-8252-75c348fcfbf8.PNG)
+  ![introduction3](./img_readme/03_decorate.PNG)
 
   4. 기능 점검 :  
     
-  ![5](https://user-images.githubusercontent.com/59858894/155628873-00d49f1b-e7ca-4e18-b163-8fffe8438f9f.PNG)
+  ![5](./img_readme/04_function.PNG)
     
   5. Lighthouse :  
     
-  ![in](https://user-images.githubusercontent.com/59858894/155638901-6033400a-ea8d-4bf9-959b-7f101524224f.PNG)
+  ![in](./img_readme/05_lighthouse.PNG)
 
   
   Lighthouse는 단순히 참고용으로 사용하였다.  
   
   6. 최종 결과 :  
     
-  ![g](https://user-images.githubusercontent.com/59858894/155637522-29828d76-78f0-4c43-a4d7-230895f3478d.PNG)
+  ![g](./img_readme/06_final.PNG)
 
 
   # Error revising
