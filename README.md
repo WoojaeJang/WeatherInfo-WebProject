@@ -22,41 +22,46 @@
   
 ## 🏃 프로젝트 개발 과정 : 
   
-|1. 방향 설정|
+1. 방향 설정 :   
+구현기능 설계 및 아웃라인 도출  
+
+
+2. 방향성 확인 :  
+
+|![direction](./README_images/01_direction.PNG)  |
 |---|
-|구현기능 설계 및 아웃라인 도출|
 
 
-|2. 방향성 확인|
+3. 브라우저 화면 구성 :  
+
+|![layout](./README_images/02_layout.PNG)  |
 |---|
-|![direction](./README_images/01_direction.PNG)|
 
 
-|3. 브라우저 화면 구성|
-|---|
-|![layout](./README_images/02_layout.PNG)|
+4. 배경 및 브라우저 꾸미기 :  
 
-
-|4. 배경 및 브라우저 꾸미기|
-|---|
 |![decorate](./README_images/03_decorate.PNG)|
-
-
-|5. 기능 점검|  
 |---|
+
+
+5. 기능 점검 :  
+
 |![function](./README_images/04_function.PNG)|
+|---|
 
  
-|6. Lighthouse|
+6. Lighthouse :
 |---|
-|![lighthouse](./README_images/05_lighthouse.PNG)
-(Lighthouse는 단순히 참고용으로 사용하였다.)|
+|![lighthouse](./README_images/05_lighthouse.PNG)|
+
+(Lighthouse는 단순히 참고용으로 사용하였다.)
 
 
-|7. 최종 결과| 
-|---|
+7. 최종 결과 :  
+
 |![final](./README_images/06_final.PNG)|
- 
+|---| 
+
 
 ## 🔨 Error revising  
 - 도시 이름 정보를 받아오기 : 이름의 정보를 받아오는 것이 아니라 index를 받아오는 것임을 늦게 알아차렸다.  
@@ -84,4 +89,3 @@
 - 처음 웹 화면상 배경화면을 설정하지 못했다.
 - 도시를 설정하면 해당 도시의 시간으로 변경하고자 하였으나 한국의 시간만 따올 수 있었다.
 - 날씨에 대한 정보와 현재 온도 같은 경우 선택 후 화면 상에 드러나게 하고자 하였으나 그러지 못했다.
-
