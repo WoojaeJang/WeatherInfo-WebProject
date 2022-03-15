@@ -56,7 +56,8 @@
 |![lighthouse](./README_images/05_lighthouse.PNG)|
 |---|
 
-(Lighthouse는 단순히 참고용으로 사용하였다.) <br/>  
+(Lighthouse는 단순히 참고용으로 사용하였다.) 
+<br/>  
 
 
 ## 🍎 프로젝트 최종 결과
