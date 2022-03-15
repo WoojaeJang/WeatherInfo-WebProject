@@ -22,46 +22,41 @@
   
 ## 🏃 프로젝트 개발 과정 : 
   
-1. 방향 설정 : 구현기능 설계 및 아웃라인 도출
-
-2. 방향성 확인 :  
-
-|![direction](./README_images/01_direction.PNG)  |
+|1. 방향 설정|
 |---|
+|구현기능 설계 및 아웃라인 도출|
 
 
-2. 브라우저 화면 구성 :  
-
-|![layout](./README_images/02_layout.PNG)  |
+|2. 방향성 확인|
 |---|
+|![direction](./README_images/01_direction.PNG)|
 
 
-3. 배경 및 브라우저 꾸미기 :  
+|3. 브라우저 화면 구성|
+|---|
+|![layout](./README_images/02_layout.PNG)|
 
+
+|4. 배경 및 브라우저 꾸미기|
+|---|
 |![decorate](./README_images/03_decorate.PNG)|
+
+
+|5. 기능 점검|  
 |---|
-
-
-4. 기능 점검 :  
-
 |![function](./README_images/04_function.PNG)|
-|---|
 
  
-5. Lighthouse :  
-
-|![lighthouse](./README_images/05_lighthouse.PNG)|
+|6. Lighthouse|
 |---|
+|![lighthouse](./README_images/05_lighthouse.PNG)
+(Lighthouse는 단순히 참고용으로 사용하였다.)|
 
-(Lighthouse는 단순히 참고용으로 사용하였다.)
 
-
-6. 최종 결과 :  
-
+|7. 최종 결과| 
+|---|
 |![final](./README_images/06_final.PNG)|
-|---| 
-
-
+ 
 
 ## 🔨 Error revising  
 - 도시 이름 정보를 받아오기 : 이름의 정보를 받아오는 것이 아니라 index를 받아오는 것임을 늦게 알아차렸다.  
