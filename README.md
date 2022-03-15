@@ -52,7 +52,8 @@
 
 |![lighthouse](./README_images/05_lighthouse.PNG)|
 |---|
-Lighthouse는 단순히 참고용으로 사용하였다.  
+
+(Lighthouse는 단순히 참고용으로 사용하였다.)
 
 
 6. 최종 결과 :  
