@@ -23,37 +23,37 @@
 
 ## 🏃 프로젝트 개발 과정
   
-### 1. 구체적인 목표 설정
+#### 1. 구체적인 목표 설정
 - 구현하고자 하는 기능 범위 설정
 - 디자인 선정 및 템플릿 확정
 - 역활 선정
   
 
-### 2. 간단한 스토리보드 작성
+#### 2. 간단한 스토리보드 작성
 
 |![direction](./README_images/01_direction.PNG)  |
 |---|
 
 
-3. 브라우저 화면 구성
+#### 3. 브라우저 화면 구성
 
 |![layout](./README_images/02_layout.PNG)  |
 |---|
 
 
-4. 배경 및 브라우저 꾸미기
+#### 4. 배경 및 브라우저 꾸미기
 
 |![decorate](./README_images/03_decorate.PNG)|
 |---|
 
 
-5. 기능 점검
+#### 5. 기능 점검
 
 |![function](./README_images/04_function.PNG)|
 |---|
 
  
-6. Lighthouse
+#### 6. Lighthouse
 
 |![lighthouse](./README_images/05_lighthouse.PNG)|
 |---|
